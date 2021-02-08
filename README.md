@@ -1,9 +1,9 @@
 1. Background and Overview 
-   - Artillery game is a single(maybe two) player strategy video game involving tank(something else) trying to destory a object. Used to calculate the trajectories of rockets and other related calculations.
+   - Artillery game is a single (maybe two) player strategy video game involving tank(something else) trying to destroy an object. Used to calculate the trajectories of rockets and other related calculations.
 
 2. Functionality and MVPs 
+   - Use canvas for game.
    - Instruction of the game.
-   - Use cnavas for game board.
    - With this artillery game, user can do:
    
         - start and restart the game.
@@ -17,29 +17,31 @@
         - if user did not hit the target, user will see number of attempts.
         
 3. Wireframes && File Structure
-   - This app will have a single screen with game board, title, rules, and will include links to github. 
+   - This app will have a single screen with game board, title, rules, and will include links to Github. 
    
      ![alt text](https://github.com/nhsb00/Artillery/blob/master/dist/images/wire.png)
-
-   - dist
-   - src > 
-        - styles
-        - scriptes >  
-                - tank
-                - missile
-                - main
-                - ui    
+   
+   * dist
+   * src > 
+        * index.js
+        * styles
+        * scripts >  
+        
+              tank.js
+              missile.js
+              ui.js
+   * index.html
                 
 4. Architecture and Technology 
     - This project will be implemented with `JavaScript`, `HTML` and `CSS`
 5. Implementation Timeline 
-    - Day 1: Creating game to function such as game board using canvas and tank.
+    - Day 1: Study canvas and create game board and other objects by using canvas.
     
-    - Day 2: Create missile and get scores. Stlying webpage.
+    - Day 2: Give tank mobility and cannon for projectile
 
-    - Day 3 
+    - Day 3: Create ability to fire missile and get scores.
 
-    - Day 4:
+    - Day 4: Styling webpage dropdown for rule and instruction.
 
-    - Day 5:
+    - Day 5: Final touch such as fixing bugs and styling better.
 
