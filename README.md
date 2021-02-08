@@ -1,9 +1,9 @@
-1. Background and Overview 
-   - Artillery game is a single (maybe two) player strategy video game involving tank(something else) trying to destroy an object. Used to calculate the trajectories of rockets and other related calculations.
-
-2. Functionality and MVPs 
+## Background and Overview 
+   - Artillery game is a single (maybe two) player strategy video game involving tank(something else) trying to destroy an object. Player can move a tank and control the angle and power to hit an object by calculating the trajectories of rockets and other related calculations.
+   
+## Functionality and MVPs 
    - Use canvas for game.
-   - Instruction of the game.
+   - Create instruction and rules for the game.
    - With this artillery game, user can do:
    
         - start and restart the game.
@@ -14,10 +14,10 @@
         
         - if user hits the target, user get score.
         
-        - if user did not hit the target, user will see number of attempts.
+        - if user did not hit the target, user will see number of attempts (maybe include maximum attemps).
         
-3. Wireframes && File Structure
-   - This app will have a single screen with game board, title, rules, and will include links to Github. 
+## Wireframes && File Structure
+   - This app will have a single screen with a game board, title, rules, and will include links to Github. Player can move the tank using left and right arrow buttons and control shooting by pressing `space bar`. I hope there will be a music on/off button to enjoy game better.
    
      ![alt text](https://github.com/nhsb00/Artillery/blob/master/dist/images/wire.png)
    
@@ -32,9 +32,9 @@
               ui.js
    * index.html
                 
-4. Architecture and Technology 
+## Architecture and Technology 
     - This project will be implemented with `JavaScript`, `HTML` and `CSS`
-5. Implementation Timeline 
+## Implementation Timeline 
     - Day 1: Study canvas and create game board and other objects by using canvas.
     
     - Day 2: Give tank mobility and cannon for projectile
