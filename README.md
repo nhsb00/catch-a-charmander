@@ -20,7 +20,7 @@
    - This app will have a single screen with a game board, title, rules, and will include links to Github. Player can move the tank using left and right arrow buttons. Player also can control angle with the up and down arrow keys. Power is based on how long player hold space bar. Power guage will stop when it hits maximum gauge. It will fire when you release the `space bar`. Power gauge show up above tank. There will be a music on/off button to enjoy game better. 
    
    
-     ![alt text](https://github.com/nhsb00/Artillery/blob/master/dist/images/wire.png)
+     ![alt text](https://github.com/nhsb00/Artillery/blob/main/dist/images/wire.png)
    
    * dist
    * src > 
