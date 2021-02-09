@@ -1,7 +1,5 @@
 import Tank from './tank';
 import TankHandler from './tankhandler';
-import Cannon from './cannon';
-import CannonHandler from './cannonhandler';
 import Target from './target';
 
 const canvas = document.getElementById("gameBoard");
@@ -22,13 +20,11 @@ const GAME_HEIGHT = 600;
 const tank = new Tank(GAME_WIDTH, GAME_HEIGHT);
 new TankHandler(tank);
 
-// const cannon = new Cannon(GAME_WIDTH, GAME_HEIGHT);
-// new CannonHandler(cannon);
 const target = new Target(GAME_WIDTH, GAME_HEIGHT)
 
 tank.draw(ctx);
 target.draw(ctx);
-// cannon.draw(ctx);
+
 
 let lastTime = 0;
 
@@ -40,8 +36,6 @@ function gameLoop(timestamp) {
   tank.update(dt);
   tank.draw(ctx);
   target.draw(ctx)
-  // cannon.update(dt);
-  // cannon.draw(ctx);
 
   requestAnimationFrame(gameLoop);
 }
