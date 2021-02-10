@@ -39,7 +39,7 @@ export default class Tank {
         ctx.beginPath();
         ctx.moveTo(this.position.x + this.width/2, this.position.y + this.height/2);
         ctx.lineTo(
-            this.position.x + this.width / 2 + this.cannonLength * Math.cos(this.cannonAngle),
+            this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
             this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle));
         ctx.stroke();
         ctx.closePath();
@@ -59,7 +59,6 @@ export default class Tank {
             this.missileX = this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
             this.missileY = this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle)
         } else {
-            this.missileDx = this.gauge  * Math.cos(this.cannonAngle);
             this.missileDy -= this.gravity;
             this.missileX += this.missileDx;
             this.missileY -= this.missileDy;

@@ -17,6 +17,8 @@ export default class TankHandler {
                 case 32:
                     tank.charging = true;
                     tank.gauge += tank.gaugeSpeed
+                    tank.missileDx = tank.gauge * 1.5 * Math.cos(tank.cannonAngle);
+                    tank.missileDy = tank.gauge * 1.5 * Math.sin(tank.cannonAngle);
                     break;
             }
         })
