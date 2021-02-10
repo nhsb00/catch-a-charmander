@@ -1,6 +1,7 @@
-import Tank from './tank';
-import TankHandler from './tankhandler';
-import Target from './target';
+import "./styles/index.scss"
+import Tank from './scripts/tank';
+import TankHandler from './scripts/tankhandler';
+import Target from './scripts/target';
 
 const canvas = document.getElementById("gameBoard");
 
@@ -33,6 +34,7 @@ function gameLoop(timestamp) {
   lastTime = timestamp;
 
   ctx.clearRect(0, 0, 800, 600);
+  
   tank.update(dt);
   tank.draw(ctx);
   target.draw(ctx)
@@ -52,3 +54,21 @@ gameLoop();
 // const drawMissile = () => {}
 
 // draw();
+
+// function twinkle(){
+//   if (flag === 0) {
+//     document.querySelector('h1').style.color = '#d6806e';
+//     flag ++;
+//   } else if(flag === 1) {
+//     document.querySelector('h1').style.color = '#fbb666';
+//     flag ++;
+//   }else if(flag === 2){
+//     document.querySelector('h1').style.color = '#f9f871';
+//     flag ++;
+//   }else{
+//     document.querySelector('h1').style.color = '#f2ecff';
+//     flag = 0;
+//   }
+// }
+
+// setInterval(twinkle, 1000);
