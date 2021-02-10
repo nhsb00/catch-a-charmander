@@ -23,15 +23,15 @@ export default class Tank {
         this.gaugeBarRaidus = 30;
         //missile
         this.missileRadius = 10;
-        this.missilePower = this.gauge * 1.5;
-        this.missileDx = this.gauge * 1.5 * Math.cos(this.cannonAngle);
-        this.missileDy = this.gauge * 1.5 * Math.sin(this.cannonAngle);
+        this.missileDx = this.gauge * Math.cos(this.cannonAngle);
+        this.missileDy = this.gauge * Math.sin(this.cannonAngle);
         this.gravity = 0.0981;
         this.charging = false;
         this.fire = false;
+        this.hit = false;
     }
 
-    draw(ctx) {
+    drawTank(ctx) {
         //tank
         ctx.fillStyle = '#0ff';
         ctx.fillRect(this.position.x, this.gameHeight - this.height, this.width, this.height);
@@ -42,7 +42,9 @@ export default class Tank {
             this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
             this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle));
         ctx.stroke();
-        ctx.closePath();
+        ctx.closePath();    
+    } 
+    drawGuage(ctx) {
         //gauge
         ctx.beginPath();
         ctx.arc(
@@ -54,6 +56,10 @@ export default class Tank {
             false
         );
         ctx.stroke();
+        
+    }
+
+    drawMissile(ctx) {
         //missile
         if (!this.fire) {
             this.missileX = this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
@@ -63,6 +69,7 @@ export default class Tank {
             this.missileX += this.missileDx;
             this.missileY -= this.missileDy;
         }
+          
         ctx.beginPath();
         ctx.arc(
             this.missileX,
@@ -74,7 +81,7 @@ export default class Tank {
         ctx.fillStyle = "blue";
         ctx.fill();
         ctx.closePath()
-    } 
+    }
 
     moveLeft() {
         this.speed = -this.maxSpeed;
@@ -110,9 +117,13 @@ export default class Tank {
         if(this.position.x  + this.width > this.gameWidth/2 - this.width/2) this.position.x = (this.gameWidth/2) - this.width * 1.5;
         if(this.position.y + this.height/2 === this.position.y + this.height/2) this.position.y = this.gameHeight - this.height
 
+        //guage
+        if(this.gauge > Math.PI * 2) {this.gauge = Math.PI * 2} 
+
         //missile
-        if(this.gauge > Math.PI * 2) this.gauge = Math.PI * 2
-        
+        if(this.missileX < 0 || this.missileX > this.gameWidth || this.missileY < 0 || this.missileY > this.gameHeight) {
+            this.fire = false;
+        }
     }
 
 }
