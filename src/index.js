@@ -40,19 +40,21 @@ function gameLoop(timestamp) {
 
 gameLoop();
 
+let count = 0;
+
 function twinkle(){
-  if (flag === 0) {
+  if (count === 0) {
     document.querySelector('h1').style.color = '#d6806e';
-    flag ++;
-  } else if (flag === 1) {
+    count ++;
+  } else if (count === 1) {
     document.querySelector('h1').style.color = '#fbb666';
-    flag ++;
-  } else if (flag === 2) {
+    count ++;
+  } else if (count === 2) {
     document.querySelector('h1').style.color = '#f9f871';
-    flag ++;
+    count ++;
   } else {
     document.querySelector('h1').style.color = '#f2ecff';
-    flag = 0;
+    count = 0;
   }
 }
 
