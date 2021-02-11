@@ -12,10 +12,13 @@
             height: 100vh;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
+            font-family: 'Press Start 2P', cursive;
         }
        #gameBoard {
             border: 1px solid black;
+            background-color: #f5df4d;
         }
     </style>
   </head>
@@ -24,7 +27,9 @@
     <header>
       <h1>Welcome to Artillery !</h1>
     </header>
-    <canvas id="gameBoard" width="800px" height="600px"></canvas>
-    <script src="./dist/main.js"></script> 
+    <div>
+      <canvas id="gameBoard" width="800px" height="600px"></canvas>
+      <script src="./dist/main.js"></script> 
+    </div>
   </body>
 </html>
