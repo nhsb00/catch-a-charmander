@@ -31,19 +31,26 @@ export default class Tank {
         this.charging = false;
         this.fire = false;
         this.hit = false;
+        this.ground = true;
         this.game = game;
+        this.image1 = document.getElementById("tank")
+        this.image2 = document.getElementById("missile")
+        
+        this.reset();
     }
-
+ 
     draw(ctx) {
         //tank
-        ctx.fillStyle = '#a2c49b';
-        ctx.fillRect(this.position.x, this.gameHeight - this.height, this.width, this.height);
+        ctx.drawImage(this.image1, this.position.x, this.gameHeight - this.height, this.width, this.height)
+        // ctx.fillStyle = '#a2c49b';
+        // ctx.fillRect(this.position.x, this.gameHeight - this.height, this.width, this.height);
         //cannon
         ctx.beginPath();
         ctx.moveTo(this.position.x + this.width/2, this.position.y + this.height/2);
         ctx.lineTo(
             this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
             this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle));
+        ctx.strokeStyle = 'rgb(255, 127, 80)'
         ctx.stroke();
         ctx.closePath();    
     } 
@@ -58,8 +65,7 @@ export default class Tank {
             this.gauge,
             false
         );
-        ctx.stroke();
-        
+        ctx.stroke();  
     }
 
     drawMissile(ctx) {
@@ -72,15 +78,19 @@ export default class Tank {
             this.missileX += this.missileDx;
             this.missileY -= this.missileDy;
         }
-          
+        ctx.drawImage(this.image2, 
+            this.missileX-17,
+            this.missileY-17,
+            30,30
+        ) 
         ctx.beginPath();
-        ctx.arc(
-            this.missileX,
-            this.missileY,
-            this.missileRadius,
-            0,
-            Math.PI * 2
-        )
+        // ctx.arc(
+        //     this.missileX,
+        //     this.missileY,
+        //     this.missileRadius,
+        //     0,
+        //     Math.PI * 2
+        // )
         ctx.fillStyle = "#e85450";
         ctx.fill();
         ctx.closePath()
@@ -110,35 +120,51 @@ export default class Tank {
         this.cannonSpeed = 0;
     }
 
+    stopSpacebar() {
+        this.gauge = 0
+    }
+
+    reset() {
+        this.position = {
+            x: 0,
+            y: this.gameHeight - this.height,
+        };
+    }
+
     update(dt) {
         if (!dt) return;
-        
+          
 
         this.position.x += this.speed;
         // this.position.y += this.cannonAngleSpeed;
 
         if(this.position.x < 0) this.position.x = 0;
-        if(this.position.x  + this.width > this.gameWidth/2 - this.width * 1.5) this.position.x = (this.gameWidth/2) - this.width * 2.5;
+        if(this.position.x  + this.width > this.gameWidth/2 - this.width * 2) this.position.x = (this.gameWidth/2) - this.width * 3;
         if(this.position.y + this.height/2 === this.position.y + this.height/2) this.position.y = this.gameHeight - this.height
 
         //guage
         if(this.gauge > Math.PI * 2) {this.gauge = Math.PI * 2} 
 
         //missile wall on left/right/top/bottom
-        if(this.missileX - this.missileRadius < 0 || this.missileX + this.missileRadius > this.gameWidth || this.missileY < 0 || this.missileY + this.missileRadius > this.gameHeight) {
+        if(this.missileX - this.missileRadius < - 2 * this.width ||
+             this.missileX + this.missileRadius > this.gameWidth || 
+             this.missileY < 0 || this.missileY + this.missileRadius > this.gameHeight + 2*this.height) {
             this.fire = false;
-            console.log(this.missileX)
+            this.game.attempts++;
+            this.game.attemptsCount.innerText = `Attempts: ${this.game.attempts}`
+            console.log(this.game.attempts)
         }
         
-        //missile hitting obejct
+        //missile hitting target
          if (this.missileX >= this.game.target.targetX &&
             this.missileX <= this.game.target.targetX + this.game.target.targetWidth &&
-            this.missileY >= this.game.target.targetY) {
+            this.missileY >= this.game.target.targetY &&
+            this.missileY <= this.gameHeight) {
                 this.hit = true;
-                this.missileX = - this.missileX;
-                this.missileX = - this.missileY;
-                console.log('hit object')
-                clearInterval();
+                clearInterval(setInterval(this.drawMissile(this.game.ctx), 10));
+                this.missileX = -this.missileX;
+                this.missileY = -this.missileY;
+                console.log('hit target')
          }
     }
     

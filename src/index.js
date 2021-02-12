@@ -9,17 +9,24 @@ const ctx = canvas.getContext("2d");
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 
-let game = new Game(GAME_WIDTH, GAME_HEIGHT);
-game.start();
-// const tank = new Tank(GAME_WIDTH, GAME_HEIGHT);
-// new TankHandler(tank);
+let game = new Game(GAME_WIDTH, GAME_HEIGHT, ctx);
 
-// const target = new Target(GAME_WIDTH, GAME_HEIGHT)
+const button = document.getElementById('restart');
+button.addEventListener('click', e => {
+  game.restart();
+})
 
-// tank.drawTank(ctx);
-// tank.drawGuage(ctx);
-// tank.drawMissile(ctx);
-// target.draw(ctx);
+const instruction = document.getElementById("instruction");
+const modal = document.getElementById("modal");
+instruction.addEventListener('click', e => {
+  modal.style.display = "block";
+})
+modal.addEventListener('click', e => {
+  modal.style.display = "none";
+})
+
+
+
 
 
 let lastTime = 0;
@@ -29,19 +36,9 @@ function gameLoop(timestamp) {
   lastTime = timestamp;
 
   ctx.clearRect(0, 0, 800, 600);
-  
-  // tank.update(dt);
-  // tank.drawTank(ctx);
-  // tank.drawGuage(ctx);
-  // tank.drawMissile(ctx);
-  // target.draw(ctx)
+
   game.update(dt);
   game.draw(ctx);
-  // if (!tank.hit) {
-  //   tank.drawTank(ctx);
-  //   tank.drawGuage(ctx);
-  //   tank.drawMissile(ctx);
-  // }
   
   requestAnimationFrame(gameLoop);
 }

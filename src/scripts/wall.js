@@ -5,6 +5,7 @@ export default class Wall {
         this.width = 50;
         this.height = 50;
         this.markedForDeletion = false;
+        this.image3 = document.getElementById("wall")
     }
 
     update() {
@@ -16,7 +17,6 @@ export default class Wall {
         let right = this.position.x + this.width;
         let bottom = this.position.y + this.height;
         if (bottomOfMissile >= topOfWall && topOfMissile <= bottom && this.game.tank.missileX >= left && this.game.tank.missileX + this.game.tank.missileRadius <= right) {
-            console.log("hit wall")
             this.game.tank.missileX = - this.game.tank.missileX;
             this.game.tank.missileX = - this.game.tank.missileY;
             this.markedForDeletion = true;
@@ -24,7 +24,7 @@ export default class Wall {
     }
 
     draw(ctx) {
-        ctx.fillStyle = '#939597';
-        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        ctx.drawImage(this.image3,this. position.x, this.position.y, this.width, this.height)
+        
     }
 }

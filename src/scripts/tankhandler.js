@@ -1,5 +1,5 @@
 export default class TankHandler {
-    constructor(tank) {
+    constructor(tank, game) {
         document.addEventListener("keydown", (event) => {
             switch(event.keyCode) {
                 case 37:
@@ -16,9 +16,13 @@ export default class TankHandler {
                     break;
                 case 32:
                     tank.charging = true;
+                    tank.hit = false;
                     tank.gauge += tank.gaugeSpeed
                     tank.missileDx = tank.gauge * 1.5 * Math.cos(tank.cannonAngle);
                     tank.missileDy = tank.gauge * 1.5 * Math.sin(tank.cannonAngle);
+                    break;
+                case 13:
+                    game.start();
                     break;
             }
         })
