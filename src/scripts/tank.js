@@ -35,7 +35,8 @@ export default class Tank {
         this.game = game;
         this.image1 = document.getElementById("tank")
         this.image2 = document.getElementById("missile")
-        
+        this.jumpcount = 0;
+        this.jumpmax = 1;
         this.reset();
     }
  
@@ -161,9 +162,13 @@ export default class Tank {
             this.missileY >= this.game.target.targetY &&
             this.missileY <= this.gameHeight) {
                 this.hit = true;
-                clearInterval(setInterval(this.drawMissile(this.game.ctx), 10));
                 this.missileX = -this.missileX;
                 this.missileY = -this.missileY;
+
+                // setTimeout(()=>{ alert("hit target") }, 0)
+                // clearInterval(setInterval(this.drawMissile(this.game.ctx), 10));
+                // this.missileDx = -this.missileDx;
+                // this.missileDy = -this.missileDy;
                 console.log('hit target')
          }
     }

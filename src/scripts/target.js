@@ -7,9 +7,8 @@ export default class Target {
         this.image4 = document.getElementById("target")
     }
     update(){}
+    
     draw(ctx) {
         ctx.drawImage(this.image4, this.targetX, this.targetY, this.targetWidth, this.targetHeight);
-        // ctx.fillStyle = "#7bc4c4";
-        // ctx.fillRect(this.targetX, this.targetY, this.targetWidth, this.targetHeight);
     }
 }   

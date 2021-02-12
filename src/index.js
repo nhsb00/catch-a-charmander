@@ -25,10 +25,6 @@ modal.addEventListener('click', e => {
   modal.style.display = "none";
 })
 
-
-
-
-
 let lastTime = 0;
 
 function gameLoop(timestamp) {
@@ -67,3 +63,8 @@ function twinkle(){
 }
 
 setInterval(twinkle, 1000);
+
+function play() {
+  const audio = document.getElementById("audio");
+  audio.play()
+}

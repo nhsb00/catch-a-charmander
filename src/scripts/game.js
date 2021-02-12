@@ -11,8 +11,6 @@ export const GAMESTATE = {
     NEWSTAGE: 4,
 }
 
-
-
 export default class Game {
     constructor(gameWidth, gameHeight, ctx) {
 
@@ -52,13 +50,17 @@ export default class Game {
     }
 
     restart() {
-        this.gamestate = GAMESTATE.MENU
+        // this.gamestate = GAMESTATE.NEWSTAGE;
+        
         this.tank = new Tank(this);
         this.target = new Target(this);
         this.walls = buildStage(this, this.stages[0]);
         this.gameObjects = [this.tank, this.target]
+        new TankHandler(this.tank, this);
         this.attempts = 0;
-        this.start();
+        
+        this.currentStage = 0;
+       
     }
 
     update(dt) {
@@ -86,17 +88,6 @@ export default class Game {
         this.tank.drawGuage(ctx);
         this.tank.drawMissile(ctx);
         [...this.gameObjects, ...this.walls].forEach(object => object.draw(ctx)); 
-
-        // if(this.gamestate === GAMESTATE.PAUSED) {
-        //     ctx.rect(0,0,this.gameWidth, this.gameHeight);
-        //     ctx.fillStyle = "rgba(0,0,0,0.5)";
-        //     ctx.fill();
-
-        //     ctx.font = "30px Arial";
-        //     ctx.fillStyle = "white";
-        //     ctx.textAlign ="center";
-        //     ctx.fillText("Pasued", this.gameWidth /2 , this.gameHeight/2)
-        // }
         
         if(this.gamestate === GAMESTATE.MENU) {
             ctx.drawImage(this.image5, 0,0,this.gameWidth, this.gameHeight)
@@ -118,6 +109,17 @@ export default class Game {
             ctx.fillStyle = "white";
             ctx.textAlign ="center";
             ctx.fillText("GAME OVER", this.gameWidth /2 , this.gameHeight/2)
+         }
+
+          if(this.gamestate === GAMESTATE.NEWSTAGE) {
+            ctx.drawImage(this.image6, 0,0,this.gameWidth, this.gameHeight)
+            ctx.fillStyle = "rgba(0,0,0,1)";
+            ctx.fill();
+
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign ="center";
+            ctx.fillText("NEW STAGE", this.gameWidth /2 , this.gameHeight/2)
          }
     }
 

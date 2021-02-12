@@ -15,11 +15,14 @@ export default class TankHandler {
                     tank.moveDown();
                     break;
                 case 32:
-                    tank.charging = true;
-                    tank.hit = false;
-                    tank.gauge += tank.gaugeSpeed
-                    tank.missileDx = tank.gauge * 1.5 * Math.cos(tank.cannonAngle);
-                    tank.missileDy = tank.gauge * 1.5 * Math.sin(tank.cannonAngle);
+                    if (!tank.fire) {
+                        tank.charging = true;
+                        tank.gauge += tank.gaugeSpeed
+                        tank.missileDx = tank.gauge * 1.5 * Math.cos(tank.cannonAngle);
+                        tank.missileDy = tank.gauge * 1.5 * Math.sin(tank.cannonAngle);
+                    } else {
+                        return;
+                    }
                     break;
                 case 13:
                     game.start();
