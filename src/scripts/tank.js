@@ -153,7 +153,7 @@ export default class Tank {
             this.fire = false;
             this.game.attempts++;
             this.game.attemptsCount.innerText = `Attempts: ${this.game.attempts}`
-            console.log(this.game.attempts)
+            // console.log(this.game.attempts)
         }
         
         //missile hitting target
@@ -169,7 +169,7 @@ export default class Tank {
                 // clearInterval(setInterval(this.drawMissile(this.game.ctx), 10));
                 // this.missileDx = -this.missileDx;
                 // this.missileDy = -this.missileDy;
-                console.log('hit target')
+                // console.log('hit target')
          }
     }
     

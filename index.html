@@ -8,32 +8,6 @@
     <script src="https://kit.fontawesome.com/e4ce5e8320.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="src/images/favi.png" />
     <title>Catch-a-Charmander</title>
-    <style>
-       body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            /* flex-direction: column;
-            align-items: center; */
-            font-family: 'Press Start 2P', cursive;
-            background-image: url(/src/images/background1.jpg);
-            background-position: center;
-            background-size: cover;
-          
-        }
-        img {
-            display: none;
-        }
-       #gameBoard {
-            border: 1px solid gray;
-            border-radius: 5px;
-            background-color: skyblue;
-            background-image: url(/src/images/grass.png);
-            background-position: center;
-            background-size: 1200px 1800px;
-        }
-    </style>
   </head>
 
   <body>
@@ -43,29 +17,30 @@
       <img id="target" src="/src//images/charmander.png">
       <img id="background" src="src/images/background">
       <img id="gameover" src="src/images/gameover.png">
-    <div> 
+      <header>
         <h1>Welcome to <br> Catch-a-Charmander</h1>
+      </header>
       
-      <div>
-        <a href="https://www.linkedin.com/public-profile/in/soobin-lim-2a47a2206/?challengeId=AQFu71EIz4q5cgAAAXeXK8Nf5F_tR2AxSbu5AogrPfL_hQGIWPeBWe9o5I7QAI0Yq7LPzk2bKurWTghshCSkQYMzCuTO6ZtE-g&submissionId=3b56bd77-6f0e-6316-07d1-0c2004fdd151">LinkedIn</a>
-        <a href="https://github.com/nhsb00/">GitHub</a>
-      </div>
-     
-      <!-- <button onclick="audio.play()">play<audio id="audio" src="/src//music/PokemonBattle-tones6.com.mp3"></audio></button> -->
+    <div> 
       <div class="bgm">
         <audio controls loop>
             <source src="src/music/PokemonBattle-tones6.com.mp3" >
         </audio>
+        <a href="https://www.linkedin.com/public-profile/in/soobin-lim-2a47a2206/?challengeId=AQFu71EIz4q5cgAAAXeXK8Nf5F_tR2AxSbu5AogrPfL_hQGIWPeBWe9o5I7QAI0Yq7LPzk2bKurWTghshCSkQYMzCuTO6ZtE-g&submissionId=3b56bd77-6f0e-6316-07d1-0c2004fdd151">LinkedIn</a>
+        <a href="https://github.com/nhsb00/">GitHub</a>
       </div>
+                 
+      <!-- <button onclick="audio.play()">play<audio id="audio" src="/src//music/PokemonBattle-tones6.com.mp3"></audio></button> -->
 
-      <div>
-        <p id="stage">Stage: 0</p>
-        <p id="attempts">Attempts: 0</p>
-        <p>Max. Attmepts: 10</p>
+      <div class = 'scroeboard'>
+        <span id="stage">Stage: 0</span>
+        <span id="attempts">Attempts: 0</span>
+        <span>Max. Attmepts: 10</span>
         <button id="instruction" class="navlinks">Instruction</button>
+      </div>
+      <div>
         <button id="restart">Restart</button>
       </div>
-      
 
       <div id="modal" class="modal">
         <div class="modal-content">
