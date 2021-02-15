@@ -4,7 +4,6 @@ import Target from './target';
 import { buildStage, stage0, stage1, stage2, stage3, stage4, stage5, stage6, stage7, stage8, stage9, stage10 } from './stages';
 
 export const GAMESTATE = {
-    // PAUSED: 0,
     RUNNING: 1,
     MENU: 2,
     GAMEOVER: 3,
@@ -31,8 +30,10 @@ export default class Game {
         this.currentStageCount = document.getElementById("stage")
         new TankHandler(this.tank, this);
 
-        this.image5 = document.getElementById("background")
+        this.image5 = document.getElementById("start")
         this.image6 = document.getElementById("gameover") 
+        this.image7 = document.getElementById("newstage")
+      
     }
     
     start() {
@@ -50,7 +51,7 @@ export default class Game {
     }
 
     restart() {
-        // this.gamestate = GAMESTATE.NEWSTAGE;
+        this.gamestate = GAMESTATE.NEWSTAGE;
         
         this.tank = new Tank(this);
         this.target = new Target(this);
@@ -91,10 +92,9 @@ export default class Game {
         
         if(this.gamestate === GAMESTATE.MENU) {
             ctx.drawImage(this.image5, 0,0,this.gameWidth, this.gameHeight)
-            ctx.fillStyle = "rgba(0,0,0,0.1)";
             ctx.fill();
 
-            ctx.font = "30px Arial";
+            ctx.font = "30px serif";
             ctx.fillStyle = "white";
             ctx.textAlign ="center";
             ctx.fillText("Press Enter to start", this.gameWidth /2 , this.gameHeight/2)
@@ -105,18 +105,18 @@ export default class Game {
             ctx.fillStyle = "rgba(0,0,0,1)";
             ctx.fill();
 
-            ctx.font = "30px Arial";
+            ctx.font = "30px serif";
             ctx.fillStyle = "white";
             ctx.textAlign ="center";
             ctx.fillText("GAME OVER", this.gameWidth /2 , this.gameHeight/2)
          }
 
           if(this.gamestate === GAMESTATE.NEWSTAGE) {
-            ctx.drawImage(this.image6, 0,0,this.gameWidth, this.gameHeight)
+            ctx.drawImage(this.image7, 0,0,this.gameWidth, this.gameHeight)
             ctx.fillStyle = "rgba(0,0,0,1)";
             ctx.fill();
 
-            ctx.font = "30px Arial";
+            ctx.font = "30px serif";
             ctx.fillStyle = "white";
             ctx.textAlign ="center";
             ctx.fillText("NEW STAGE", this.gameWidth /2 , this.gameHeight/2)

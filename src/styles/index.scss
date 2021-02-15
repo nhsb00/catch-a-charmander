@@ -12,56 +12,163 @@
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(255, 95, 62);
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
   padding: 34px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 500px;
+  width: 500px;
   border-radius: 10px;
 }
 
+.modal-content {
+  text-align: left;
+}
+
+.modal-content > h1 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  font-weight: bolder;
+  color: rgb(244,177, 133)
+}
+
+.modal-content > li {
+  color: rgb(255, 226, 111);
+  font-size: 15px;
+  list-style: inside;
+  line-height: 1.5;
+  }
+
+.modal-content > h3 {
+  color: rgb(252, 240, 222);
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+
 body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Press Start 2P", cursive;
+  font-family: 'Press Start 2P', cursive;
   background-image: url(../images/Toon_Charmander.gif);
   background-position: center;
   background-size: cover;
+}
+
+div {
+    text-align: center;
 }
 
 img {
   display: none;
 }
 
+.body {
+    position: relative;
+    width: 955px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 0 auto;
+    padding: 30px 0 30px 0;
+    width: 802px;
+}
+
+.header h1 {
+  color: rgb(244, 177, 133);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header p {
+  color: rgb(252, 240, 222);
+  font-weight: bold;
+}
+
+.bgm {
+  margin-left: 50px;
+  display: flex;
+  width: 802px;
+  justify-content: space-around;
+}
+
+audio {
+  height: 32px;
+}
+
+#restart {
+  font-size: 18px;
+  color: rgb(252, 240, 222);
+  border: 1px;
+  border-radius: 5px;
+  width: 100px;
+  height: 32px;
+  background-color: rgb(255, 95, 62);
+  line-height: 10px;
+}
+
+#restart:hover {
+  background-color: rgb(244, 177, 133);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 95, 62);
+  font-size: 2em;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(244,177, 133);
+}
+
+.score {
+  margin: 20px 76.5px;
+}
+
+.scoreboard {
+  padding: 10px;
+  font-size: 24px;
+  display: flex;
+  color: rgb(255, 226, 111);
+  justify-content: space-around;
+  border:1px solid rgb(244,177, 133);
+  border-radius: 8px;
+  background-color: rgba(244,177, 133, 0.1);
+}
+
+.scoreboard span {
+  padding-right: 40px;
+  border-right: 1px solid rgb(255, 226, 111);
+}
+
+.scoreboard :last-child {
+  border-right: none;
+  font-size: 1em;
+}
+
+.scoreboard :last-child:hover {
+  color: rgb(255, 95, 62);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+
 #gameBoard {
-  border: 1px solid gray;
+  border: 1px solid rgb(244,177, 133);
   border-radius: 5px;
   background-color: skyblue;
   background-image: url(../images/grass.png);
   background-position: center;
   background-size: 1200px 1800px;
-}
-
-.bgm {
-    position: relative;
-    justify-content: space-around;
-}
-
-.bgm > a {
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 0 4px;
 }
 

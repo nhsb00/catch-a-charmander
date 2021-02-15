@@ -11,48 +11,61 @@
   </head>
 
   <body>
-      <img id="tank" src="src//images/trainerash.png">
-      <img id="missile" src="src/images/pokeball.png">
-      <img id="wall" src="src//images/pikachu.png">
-      <img id="target" src="src//images/charmander.png">
-      <img id="background" src="src/images/background1.jpg">
-      <img id="gameover" src="src/images/gameover.png">
-      <header>
-        <h1>Welcome to <br> Catch-a-Charmander</h1>
-      </header>
-      
-    <div> 
-      <div class="bgm">
-        <audio controls loop>
-            <source src="src/music/PokemonBattle-tones6.com.mp3" >
-        </audio>
-        <a href="https://www.linkedin.com/public-profile/in/soobin-lim-2a47a2206/?challengeId=AQFu71EIz4q5cgAAAXeXK8Nf5F_tR2AxSbu5AogrPfL_hQGIWPeBWe9o5I7QAI0Yq7LPzk2bKurWTghshCSkQYMzCuTO6ZtE-g&submissionId=3b56bd77-6f0e-6316-07d1-0c2004fdd151">LinkedIn</a>
-        <a href="https://github.com/nhsb00/">GitHub</a>
-      </div>
-                 
-      <!-- <button onclick="audio.play()">play<audio id="audio" src="/src//music/PokemonBattle-tones6.com.mp3"></audio></button> -->
+    <img id="tank" src="src/images/trainerash.png">
+    <img id="missile" src="src/images/pokeball.png">
+    <img id="wall" src="src//images/pikachu.png">
+    <img id="target" src="src//images/charmander.png">
+    <img id="start" src="src/images/start.jpg">
+    <img id="newstage" src="src/images/newstage.jpg">
+    <img id="gameover" src="src/images/gameover.png">
+      <div class="body">
 
-      <div class = 'scroeboard'>
-        <span id="stage">Stage: 0</span>
-        <span id="attempts">Attempts: 0</span>
-        <span>Max. Attmepts: 10</span>
-        <button id="instruction" class="navlinks">Instruction</button>
-      </div>
-      <div>
-        <button id="restart">Restart</button>
-      </div>
-
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <h1>Instruction</h1>
-          <p>rules</p>
+        <div class="header">
+          <h1>Welcome to Catch-a-Charmander</h1>
+          <p>By: Soobin Lim</p>
         </div>
-      </div>
-
-      <canvas id="gameBoard" width="800px" height="600px"></canvas>
-      <script src="./dist/main.js"></script> 
-
-      
-    </div>
-  </body>
-</html>
+        
+        <div> 
+          <div class="navbox">
+            <div class="bgm">
+              <button id="restart">Restart</button>
+              <audio controls loop>
+                <source src="src/music/PokemonBattle-tones6.com.mp3" >
+              </audio>
+              <a href="https://www.linkedin.com/in/soobin-lim-2a47a2206/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/nhsb00/catch-a-charmander" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+            
+            <!-- <button onclick="audio.play()">play<audio id="audio" src="/src//music/PokemonBattle-tones6.com.mp3"></audio></button> -->
+            <div class="score">
+              <div class = 'scoreboard'>
+                <span id="stage">Stage: 0</span>
+                <span id="attempts">Attempts: 0</span>
+                <span>Max. Attmepts: 10</span>
+                <span id="instruction"><i class="fas fa-question-circle"></i></span>
+              </div>
+            </div>
+            
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <h1>How to Play</h1>
+                <li>Player have 10 attempts for each stage.</li>
+                <li>The pikachu walls will be disappeard once the Poke ball hit Pikachu</li>
+                <h3>1. Press Enter to Start Game.</h3>
+                <h3>2. Press left and/or right arrow keys to move trainer Ash left and/or right.</h3>
+                <h3>3. Press up or down arrow keys to control the trajectory of the Poke Ball.</h3>
+                <h3>4. Press and hold Space bar to control the power of Poke Ball.</h3>
+                <h3>5. Catch a Charmander to move onto next stage, not Pikachu.</h3>
+              </div>
+            </div>
+            
+            <canvas id="gameBoard" width="800px" height="600px"></canvas>
+            <script src="./dist/main.js"></script> 
+            
+            
+          </div>
+        </div>
+        </body>
+        </html>
+        
