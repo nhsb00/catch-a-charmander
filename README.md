@@ -42,17 +42,19 @@
    * index.html
                 
 ## Architecture and Technology 
-    - This project will be implemented with `JavaScript`, `Canvas`, `HTML` and `CSS`
-## Implementation Timeline 
-    - Day 1: Study canvas and create game board and other objects by using canvas.
+   - This project will be implemented with `JavaScript`, `Canvas`, `HTML` and `CSS`
     
-    - Day 2: Give tank mobility and cannon for projectile
+## Implementation Timeline 
 
-    - Day 3: Create ability to fire missile and get scores.
+   - Day 1: Study canvas and create game board and other objects by using canvas.
 
-    - Day 4: Styling webpage dropdown for rule and instruction.
+   - Day 2: Give tank mobility and cannon for projectile
 
-    - Day 5: Final touch such as fixing bugs and styling better.
+   - Day 3: Create ability to fire missile and get scores.
 
-    - Bonus: add Music on it.
+   - Day 4: Styling webpage dropdown for rule and instruction.
+
+   - Day 5: Final touch such as fixing bugs and styling better.
+
+   - Bonus: add Music on it.
 
