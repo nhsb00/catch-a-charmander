@@ -119,7 +119,7 @@ export default class Game {
             ctx.font = "30px serif";
             ctx.fillStyle = "white";
             ctx.textAlign ="center";
-            ctx.fillText("NEW STAGE", this.gameWidth /2 , this.gameHeight/2)
+            ctx.fillText("Press Enter to Re-start", this.gameWidth /2 , this.gameHeight/2)
          }
     }
 
