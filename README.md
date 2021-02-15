@@ -1,20 +1,22 @@
 ## Background and Overview 
-   - Artillery game is a single (maybe two) player strategy video game involving tank(something else) trying to destroy an object. Player can move a tank and control the angle and power to hit an object by calculating the trajectories of rockets and other related calculations.
+   - Gunbound-like artillery game is a single player strategy video game involving Trainer Ash trying to catch Charmanders. Player can move trainer Ash and control the angle and power to throw the poke ball to catch Charmander by calculating the trajectories of projectile and other related calculations.
    
 ## Functionality and MVPs 
    - Use canvas for game.
    - Create instruction and rules for the game.
-   - With this artillery game, user can do:
+   - With this catch-a-charmander game, user can do:
    
         - start and restart the game.
         
-        - move thank left and right.
+        - move trainer Ash left and right.
         
-        - control angle and power to shoot missile.
+        - control angle and power to throw poke ball.
         
-        - if user hits the target, user get score.
+        - if user hits charmander, user move to next stage.
         
-        - if user did not hit the target, user will see number of attempts (maybe include maximum attemps).
+        - if user hits pikachu, pikachu will be disappeared and increase number of attemps.
+        
+        - if user did not hit the target, user will see number of attempts, and game is over when the number of attempts reaches maximum attempts.
         
 ## Wireframes && File Structure
    - This app will have a single screen with a game board, title, rules, and will include links to Github. Player can move the tank using left and right arrow buttons. Player also can control angle with the up and down arrow keys. Power is based on how long player hold space bar. Power guage will stop when it hits maximum gauge. It will fire when you release the `space bar`. Power gauge show up above tank. There will be a music on/off button to enjoy game better. 
@@ -22,15 +24,21 @@
    
      ![alt text](https://github.com/nhsb00/Artillery/blob/main/dist/images/wire.png)
    
-   * dist
+   * dist >
+        * main.js
+        * main.css
    * src > 
         * index.js
+        * images
+        * music
         * styles
         * scripts >  
-        
-              tank.js
-              missile.js
-              ui.js
+             * game.js
+             * stages.js
+             * tank.js
+             * tankhandler.js
+             * target.js
+             * wall.js
    * index.html
                 
 ## Architecture and Technology 
