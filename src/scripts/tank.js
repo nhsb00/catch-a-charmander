@@ -52,12 +52,14 @@ export default class Tank {
             this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
             this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle));
         ctx.strokeStyle = 'rgb(255, 127, 80)'
+        ctx.lineWidth = 2;
         ctx.stroke();
         ctx.closePath();    
     } 
     drawGuage(ctx) {
         //gauge
         ctx.beginPath();
+        ctx.strokeStyle = '#e85450'
         ctx.arc(
             this.position.x + this.width / 2,
             this.position.y - this.height / 2,
@@ -66,7 +68,9 @@ export default class Tank {
             this.gauge,
             false
         );
+        ctx.lineWidth = 10;
         ctx.stroke();  
+        ctx.closePath(); 
     }
 
     drawMissile(ctx) {
@@ -79,12 +83,14 @@ export default class Tank {
             this.missileX += this.missileDx;
             this.missileY -= this.missileDy;
         }
+        ctx.beginPath();
+        // ctx.fillStyle = "#e85450";
+        
         ctx.drawImage(this.image2, 
             this.missileX-17,
             this.missileY-17,
             30,30
         ) 
-        ctx.beginPath();
         // ctx.arc(
         //     this.missileX,
         //     this.missileY,
@@ -92,8 +98,7 @@ export default class Tank {
         //     0,
         //     Math.PI * 2
         // )
-        ctx.fillStyle = "#e85450";
-        ctx.fill();
+        // ctx.fill();
         ctx.closePath()
     }
 
