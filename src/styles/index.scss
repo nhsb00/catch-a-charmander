@@ -145,10 +145,8 @@ a:hover {
   border-radius: 8px;
   background-color: rgba(244,177, 133, 0.1);
 }
-#instruction:hover {
-  cursor: pointer;
-  color: rgb(255, 95, 62);
-}
+
+
 .scoreboard span {
   padding-right: 25px;
   border-right: 1px solid rgb(255, 226, 111);
@@ -159,7 +157,7 @@ a:hover {
   font-size: 1em;
 }
 
-.scoreboard :last-child:hover {
+#instruction:hover {
   color: rgb(255, 95, 62);
   font-size: 1em;
   cursor: pointer;
