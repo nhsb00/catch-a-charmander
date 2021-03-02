@@ -4,6 +4,16 @@ export default class Tank {
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         //tank
+        this.srcX = 0;
+        this.srcY = 0;
+        this.sheetWidth = 256;
+        this.sheetHeight = 256;
+        this.row = 4;
+        this.col = 4;
+        this.sheetX = this.sheetWidth/ this.row;
+        this.sheetY = this.sheetHeight/ this.row;
+        this.currentFrame = 0;
+
         this.width = 50;
         this.height = 50;
         this.maxSpeed = 1;
@@ -38,11 +48,21 @@ export default class Tank {
         this.jumpcount = 0;
         this.jumpmax = 1;
         this.reset();
+        // this.updateFrame();
     }
- 
+    
+    // updateFrame() {
+    //     this.currentFrame = ++this.currentFrame % this.row;
+    //     this.srcX = this.currentFrame * this.sheetX
+    //     this.srcY = 0;
+    // }
+
     draw(ctx) {
         //tank
-        ctx.drawImage(this.image1, this.position.x, this.gameHeight - this.height, this.width, this.height)
+        // ctx.drawImage(this.image1, this.position.x, this.gameHeight - this.height, this.width, this.height)
+        // this.updateFrame();
+        ctx.drawImage(this.image1, this.srcX*this.sheetWidth/4, this.srcY*this.sheetHeight/4, this.sheetWidth/4, this.sheetHeight/4, this.position.x-5, this.position.y-15, this.sheetWidth/4, this.sheetHeight/4)
+
         // ctx.fillStyle = '#a2c49b';
         // ctx.fillRect(this.position.x, this.gameHeight - this.height, this.width, this.height);
         //cannon
@@ -129,14 +149,14 @@ export default class Tank {
     stopSpacebar() {
         this.gauge = 0
     }
-
+    
     reset() {
         this.position = {
             x: 0,
             y: this.gameHeight - this.height,
         };
     }
-
+    
     update(dt) {
         if (!dt) return;
           

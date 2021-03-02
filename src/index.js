@@ -33,7 +33,6 @@ function gameLoop(timestamp) {
   lastTime = timestamp;
 
   ctx.clearRect(0, 0, 800, 600);
-
   game.update(dt);
   game.draw(ctx);
   
