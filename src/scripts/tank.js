@@ -124,10 +124,16 @@ export default class Tank {
 
     moveLeft() {
         this.speed = -this.maxSpeed;
+        if (this.srcX > 2) {
+            this.srcX = 0
+        }
     }
 
     moveRight() {
         this.speed = this.maxSpeed;
+        if (this.srcX > 2) {
+            this.srcX = 0
+        }
     }
     
     stop() {
@@ -136,10 +142,16 @@ export default class Tank {
 
     moveUp() {
         this.cannonAngle += this.cannonAngleSpeed;
+         if (this.srcX > 2) {
+            this.srcX = 0
+        }
     }
 
     moveDown() {
         this.cannonAngle += -this.cannonAngleSpeed;
+         if (this.srcX > 2) {
+            this.srcX = 0
+        }
     }
 
     stopcannonAngle() {

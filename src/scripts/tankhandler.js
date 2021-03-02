@@ -4,23 +4,23 @@ export default class TankHandler {
             switch(event.keyCode) {
                 case 37:
                     tank.moveLeft();
-                    tank.srcX = 1;
                     tank.srcY = 1;
+                    tank.srcX += 1;
                     break;
                 case 39:
                     tank.moveRight();
-                    tank.srcX = 1;
                     tank.srcY = 2;
+                    tank.srcX += 1;
                     break;
                 case 38: 
                     tank.moveUp();
-                    tank.srcX = 0;
                     tank.srcY = 0;
+                    tank.srcX += 1;
                     break;
                 case 40:
                     tank.moveDown();
-                    tank.srcX = 0;
                     tank.srcY = 0;
+                    tank.srcX += 1;
                     break;
                 case 32:
                     if (!tank.fire) {
