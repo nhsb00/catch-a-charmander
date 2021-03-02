@@ -23,6 +23,8 @@ export default class TankHandler {
                     tank.srcX += 1;
                     break;
                 case 32:
+                    tank.srcY = 0;
+                    tank.srcX = 0;
                     if (!tank.fire) {
                         tank.charging = true;
                         tank.gauge += tank.gaugeSpeed
