@@ -148,12 +148,18 @@ audio {
   background-color: #f4b185;
   cursor: pointer; }
 
-a {
+.portfolio a {
+  text-decoration: none;
+  color: #ff5f3e;
+  font-size: 16px;
+}
+
+.bgm a {
   text-decoration: none;
   color: #ff5f3e;
   font-size: 2em; }
 
-a:hover {
+.bgm a:hover {
   text-decoration: underline;
   color: #f4b185; }
 

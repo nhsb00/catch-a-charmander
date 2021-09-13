@@ -7,6 +7,9 @@ const canvas = document.getElementById("gameBoard");
 
 const ctx = canvas.getContext("2d");
 
+
+
+
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 
@@ -64,7 +67,12 @@ function twinkle(){
 
 setInterval(twinkle, 1000);
 
-function play() {
-  const audio = document.getElementById("audio");
-  audio.play()
-}
+// const vol = document.getElementById('player')
+// function play() {
+//   const audio = document.getElementById("player");
+//   audio.volumne = 0.2;
+//   audio.play()
+// }
+
+
+

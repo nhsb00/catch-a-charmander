@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="Project Title" />
+    <meta property="og:image" content="project_pic.png" />
+    <meta property="og:description" content="A brief description of your project" />
+    <meta property="og:url" content="https://programmer.github.io/project_name" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="https://kit.fontawesome.com/e4ce5e8320.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="src/images/favi.png" />
@@ -22,16 +26,22 @@
 
         <div class="header">
           <h1>Welcome to Catch-a-Charmander</h1>
-          <p>By: Soobin Lim</p>
+          <p class="portfolio">By: <a href="https://nhsb00.github.io/" target="_blank">Soobin Lim</a></p>
         </div>
         
         <div> 
           <div class="navbox">
             <div class="bgm">
               <button id="restart">Restart</button>
-              <audio controls loop>
-                <source src="src/music/PokemonBattle-tones6.com.mp3" >
+              <audio controls id='player'>
+                <source src="src/music/PokemonBattle-tones6.com.mp3" preload="auto" volume="0.1" >
               </audio>
+              <!-- <div>
+                <button onclick="document.getElementById('player').play()">Play</button>
+                <button onclick="document.getElementById('player').pause()">Pause</button>
+                <button onclick="document.getElementById('player').volume+=0.1">Volume Up</button>
+                <button onclick="document.getElementById('player').volume-=0.1">Volume Down</button>
+              </div> -->
               <a href="https://www.linkedin.com/in/soobin-lim-2a47a2206/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://github.com/nhsb00/catch-a-charmander" target="_blank"><i class="fab fa-github"></i></a>
             </div>
@@ -51,13 +61,13 @@
             <div id="modal" class="modal">
               <div class="modal-content">
                 <h1>How to Play</h1>
-                <li>Player have 10 attempts for each stage.</li>
-                <li>The pikachu walls will be disappeard once the Poke ball hit Pikachu</li>
-                <h3>1. Press Enter to Start Game.</h3>
+                <li>Players have 10 attempts for each stage.</li>
+                <li>The pikachu walls will disappear once the Poke ball hits a Pikachu</li>
+                <h3>1. Press Enter to Start the Game.</h3>
                 <h3>2. Press left and/or right arrow keys to move trainer Ash left and/or right.</h3>
                 <h3>3. Press up or down arrow keys to control the trajectory of the Poke Ball.</h3>
-                <h3>4. Press and hold Space bar to control the power of Poke Ball.</h3>
-                <h3>5. Catch a Charmander to move onto next stage, not Pikachu.</h3>
+                <h3>4. Press and hold the space bar to control the power of the Poke Ball.</h3>
+                <h3>5. Catch a Charmander to move onto the next stage, not Pikachu.</h3>
               </div>
             </div>
             
