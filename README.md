@@ -1,5 +1,8 @@
 ## Background and Overview 
    - Gunbound-like artillery game is a single player strategy video game involving Trainer Ash trying to catch Charmanders. Player can move trainer Ash and control the angle and power to throw the poke ball to catch Charmander by calculating the trajectories of projectile and other related calculations.
+
+
+[Live Link](https://nhsb00.github.io/catch-a-charmander/)
    
 ## Functionality and MVPs 
    - Use canvas for game.
