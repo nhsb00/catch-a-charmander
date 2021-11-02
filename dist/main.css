@@ -95,7 +95,9 @@ body {
   font-family: 'Press Start 2P', cursive;
   background-image: url(images/Toon_Charmander.gif);
   background-position: center;
-  background-size: cover; }
+  background-size: cover; 
+  overflow: hidden;
+}
 
 div {
   text-align: center; }

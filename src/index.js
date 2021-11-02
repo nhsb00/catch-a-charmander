@@ -3,12 +3,11 @@ import "./styles/index.scss"
 
 import Game from './scripts/game';
 
+window.open("https://nhsb00.github.io/catch-a-charmander/", "width=954", "height=878");
+
 const canvas = document.getElementById("gameBoard");
 
 const ctx = canvas.getContext("2d");
-
-
-
 
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
