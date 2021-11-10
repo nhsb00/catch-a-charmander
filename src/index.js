@@ -33,7 +33,8 @@ let lastTime = 0;
 function gameLoop(timestamp) {
   let dt = timestamp - lastTime
   lastTime = timestamp;
-
+  const vol = document.getElementById('audio')
+  vol.volume = 0.3;
   ctx.clearRect(0, 0, 800, 600);
   game.update(dt);
   game.draw(ctx);
@@ -66,12 +67,21 @@ function twinkle(){
 
 setInterval(twinkle, 1000);
 
-// const vol = document.getElementById('player')
+
 // function play() {
-//   const audio = document.getElementById("player");
+//   const audio = document.getElementById("audio");
 //   audio.volumne = 0.2;
 //   audio.play()
 // }
 
+// document.addEventListener('keydown', function (e) {
+//   if (e.keyCode == 13) {
+//     document.getElementById('audio').play();
+//   }
+// });
 
-
+// window.addEventListener("DOMContentLoaded", event => {
+//   const audio = document.querySelector("audio");
+//   audio.volume = 0.2;
+//   audio.play();
+// });

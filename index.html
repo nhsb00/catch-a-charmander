@@ -33,14 +33,14 @@
           <div class="navbox">
             <div class="bgm">
               <button id="restart">Restart</button>
-              <audio id="audio" controls style="display:none">
-                <source src="src/music/PokemonBattle-tones6.com.mp3" preload="auto" volume="0.1" >
+              <audio id="audio" autoplay loop>
+                <source src="src/music/PokemonBattle-tones6.com.mp3"type="audio/mpeg" preload="auto" volume="0.1" >
               </audio>
               <!-- <div>
-                <button onclick="document.getElementById('audio').play()">Play</button>
-                <button onclick="document.getElementById('audio').pause()">Pause</button>
-                <button onclick="document.getElementById('audio').volume+=0.1">Volume Up</button>
-                <button onclick="document.getElementById('audio').volume-=0.1">Volume Down</button>
+                <button onclick="document.getElementById('player').play()">Play</button>
+                <button onclick="document.getElementById('player').pause()">Pause</button>
+                <button onclick="document.getElementById('player').volume+=0.1">Volume Up</button>
+                <button onclick="document.getElementById('player').volume-=0.1">Volume Down</button>
               </div> -->
               <a href="https://www.linkedin.com/in/soobin-lim-2a47a2206/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://github.com/nhsb00/catch-a-charmander" target="_blank"><i class="fab fa-github"></i></a>
@@ -62,8 +62,10 @@
               <div class="modal-content">
                 <h1>How to Play</h1>
                 <li>Players have 10 attempts for each stage.</li>
-                <li>The pikachu walls will disappear once the Poke ball hits a Pikachu</li>
-                <h3>1. Press Enter to Start the Game.</h3>
+                <li>The pikachu walls will disappear once the Poke ball hits a Pikachu.</li>
+                <li>Press Enter to turn on the music.</li>
+                <li>Press M to mute the music</li>
+                <h3>1. Press Enter to Start the Game</h3>
                 <h3>2. Press left and/or right arrow keys to move trainer Ash left and/or right.</h3>
                 <h3>3. Press up or down arrow keys to control the trajectory of the Poke Ball.</h3>
                 <h3>4. Press and hold the space bar to control the power of the Poke Ball.</h3>

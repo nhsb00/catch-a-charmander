@@ -35,7 +35,11 @@ export default class TankHandler {
                     }
                     break;
                 case 13:
+                    document.getElementById('audio').play();
                     game.start();
+                    break;
+                case 77:
+                    document.getElementById('audio').pause();                  
                     break;
             }
         })
@@ -63,6 +67,7 @@ export default class TankHandler {
                     tank.fire = true;
                     tank.gauge = Math.PI;
                     break;
+                
             }
         })
     }
