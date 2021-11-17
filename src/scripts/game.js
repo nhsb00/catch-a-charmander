@@ -47,6 +47,7 @@ export default class Game {
             this.gameObjects = [this.tank, this.target]
             this.attempts = 0;
             this.tank.reset();
+        document.getElementById('audio').play();
         this.gamestate = GAMESTATE.RUNNING
     }
 

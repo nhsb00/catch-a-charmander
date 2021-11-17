@@ -35,8 +35,8 @@ export default class TankHandler {
                     }
                     break;
                 case 13:
-                    document.getElementById('audio').play();
                     game.start();
+                   
                     break;
                 case 77:
                     document.getElementById('audio').pause();                  
