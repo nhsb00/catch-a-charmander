@@ -22,6 +22,19 @@
         - if user hits pikachu, pikachu will be disappeared and increase number of attemps.
         
         - if user did not hit the target, user will see number of attempts, and game is over when the number of attempts reaches maximum attempts.
+
+To detect if the pokeball(projectile) hits the charmander(target), I need to get the information of target's and projectile's position. If they overlap which means that they touched each other, users can move to next level.
+
+```ruby
+ if (this.missileX >= this.game.target.targetX &&
+            this.missileX <= this.game.target.targetX + this.game.target.targetWidth &&
+            this.missileY >= this.game.target.targetY &&
+            this.missileY <= this.gameHeight) {
+                this.hit = true;
+                this.missileX = -this.missileX;
+                this.missileY = -this.missileY;
+        }
+```
         
 ## Wireframes && File Structure
    - This app will have a single screen with a game board, title, rules, and will include links to Github. Player can move the tank using left and right arrow buttons. Player also can control angle with the up and down arrow keys. Power is based on how long player hold space bar. Power guage will stop when it hits maximum gauge. It will fire when you release the `space bar`. Power gauge show up above tank. There will be a music on/off button to enjoy game better. 
