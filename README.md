@@ -35,6 +35,14 @@ To detect if the pokeball(projectile) hits the charmander(target), I need to get
                 this.missileY = -this.missileY;
         }
 ```
+To have real-like projectile's trajectory, I have to apply trigonometric such as cosine and sine.
+
+```ruby
+if (!this.fire) {
+            this.missileX = this.position.x + this.width/2 + this.cannonLength * Math.cos(this.cannonAngle),
+            this.missileY = this.position.y + this.height/2 - this.cannonLength * Math.sin(this.cannonAngle)
+        } 
+```
         
 ## Wireframes && File Structure
    - This app will have a single screen with a game board, title, rules, and will include links to Github. Player can move the tank using left and right arrow buttons. Player also can control angle with the up and down arrow keys. Power is based on how long player hold space bar. Power guage will stop when it hits maximum gauge. It will fire when you release the `space bar`. Power gauge show up above tank. There will be a music on/off button to enjoy game better. 
